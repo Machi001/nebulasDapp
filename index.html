@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+<title>你答题我送星云币，奖金与前十地址共同瓜分！</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+	
+	<img src="images/icon_share.jpg" width="0" height="0">
+
+	<div class="wrap">
+
+		<div class="enter_wrap">
+ 
+			<div class="wrap_center">
+
+				<div class="enter_btn">开始夺宝</div>
+				<div class="rankList">查看排名</div>
+				   
+			</div>
+			
+			<div class="noExtension hide" id="noExtension">
+				NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use this DAPP
+			</div>
+			
+			
+			<div class="wrap_bottom">
+
+			</div>
+
+		</div><!-- /.enter_wrap -->
+		
+		<!--查看排名 -->
+		<div class="ScoreRank">
+			
+			<table class="displayRankTable" border="1" cellpadding="0">
+			  
+			   <tr><td style="color:red;background-color:yellow;width:100%">隐藏</td><tr>
+			   
+			</table>
+			
+			<table class="ranktable" border="1" cellpadding="0">
+			   
+			</table>
+			  
+		</div>
+		 
+		<div class="topic_wrap">
+
+			<div class="fade_wrap">
+
+				<div class="wrap_top">
+
+					<div class="topic_no">
+
+						<span class="curr_no" id="curr_no">1</span>/<span class="count">10</span>
+
+					</div>
+
+				</div>
+
+				<div class="wrap_top1">
+
+					<div class="topic_title" id="topic_title"></div>
+
+				</div>
+
+				<div class="wrap_center">
+
+					<table class="topic_option" id="topic_option">
+
+					</table>
+
+				</div>
+
+			</div>
+
+			<div class="wrap_bottom">
+			<!--<img class="lagou_logo" src="images/topic_bottom.png">-->
+
+
+			</div>
+
+		</div><!-- /.topic_wrap -->
+
+		<div class="over_wrap">
+
+			<div class="wrap_top">
+
+				<div class="over_grade">
+
+					<span class="grade_title">您的智商指数是</span>
+
+					<span class="grade">
+
+						<div class="grade_detail_wrap">
+
+							<b class="grade_detail"></b>分
+
+						</div>
+
+					</span>
+
+				</div>
+
+			</div>
+
+		 
+			
+			<div class="wrap_center">
+
+				<div class="over_des">
+
+					<span class="des_title">智商关键词</span>
+
+					<div class="des_content">
+
+						<div class="des_keyword"></div>
+
+						<div class="des_detail"></div>
+
+					</div>
+
+				</div> 
+
+				<div class="over_btn">
+
+					<div class="over_btn_detail upload">提交分数参与领奖</div>
+					
+					<div class="over_btn_detail rankList2">查看排名</div> 
+					 
+				</div>
+
+			</div>
+
+			<div class="wrap_bottom">
+
+			</div>
+
+		</div> 
+
+		<div class="share_wrap">
+			<div class="share_text">
+				<img class="share_img" src="images/share.png">
+			</div>
+		</div>
+
+	</div><!-- /.wrap -->
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/nebPay.js"></script>
+	 
+	<script type="text/javascript">
+	
+		var initialDate = new Date();
+		
+		var initialTime = initialDate.getTime();
+		
+		var addressContract='n1nNwP6oWZooR6tdhibKQy51mwwdfyYt2MG';
+		  
+		var initialTime2;
+		
+		console.log(initialTime);
+	 
+		var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
+        var nebPay = new NebPay();
+
+        $("#enter_btn").attr("disabled",true);
+		   
+        //to check if the extension is installed
+        //if the extension is installed, var "webExtensionWallet" will be injected in to web page
+	 
+        if(typeof(webExtensionWallet) === "undefined"){
+            alert ("Extension wallet is not installed, please install it first.")
+			$('#noExtension').css('display','block');
+            
+        }else{
+            $("#enter_btn").attr("disabled",false)
+        }
+
+		careerism.init();
+	</script>
+
+</html> 
